@@ -31,16 +31,22 @@
 .conteiner {
     display: flex;
     flex-direction: row;
-    background-color: #292C30;
+    background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0),
+    rgba(156, 156, 156, 0.116),
+    rgba(255, 255, 255, 0)
+  );
     border-radius: 15px;
+    height: auto;
 }
 
 .item1 {
     width: 50%;
-
+    height: auto;
 }
 
-.item1>img {
+.item1 > img {
     width: 100%;
     object-fit: cover;
     border-radius: 15px;
@@ -53,6 +59,7 @@
     align-items: center;
     width: 50%;
     text-align: justify;
+    height: 220px;
 }
 
 h3 {

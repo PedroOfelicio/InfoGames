@@ -4,7 +4,7 @@
         <div class="conteiner">
             <button id="left" @click="moveToLeft">left</button>
             <button id="right" @click="moveToRight">right</button>
-            <div class="conteinerMenor">
+            <div class="conteinerMenor" ref="conteinerMenor"> <!-- Adicione a ref aqui -->
                 <div class="carrossel" v-for="jogo in objeto" :key="jogo.nome">
                     <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos" />
                     <h3>{{ jogo.nome }}</h3>
@@ -28,38 +28,32 @@ export default {
         };
     },
     mounted() {
-        const conteinerMenor = document.querySelector('.conteinerMenor');
+        // Use a ref para acessar o elemento DOM
+        const conteinerMenor = this.$refs.conteinerMenor;
         this.containerWidth = conteinerMenor.offsetWidth;
     },
     methods: {
-
         moveToRight() {
-
-            if (this.currentPosition  > -1200 ){
+            if (this.currentPosition > -1200) {
                 this.currentPosition -= this.slideWidth;
                 this.updateCarrosselPosition();
-                console.log('currentW', this.containerWidth);
-            console.log('position', this.currentPosition );
             }
-
-
         },
         moveToLeft() {
             console.log('clicou left')
-            if (this.currentPosition < 0  ) {
+            if (this.currentPosition < 0) {
                 this.currentPosition += this.slideWidth;
                 this.updateCarrosselPosition();
             }
         },
         updateCarrosselPosition() {
-            console.log('entrou nessa poha')
-            const carrossel = document.querySelector('.conteinerMenor');
+            // Use a ref para acessar o elemento DOM
+            const carrossel = this.$refs.conteinerMenor;
 
             carrossel.style.transform = `translateX(${this.currentPosition}px)`;
-            console.log(this.currentPosition);
         },
-    }
-}
+    },
+};
 </script>
 
 
@@ -73,14 +67,15 @@ export default {
     overflow: hidden;
 }
 
-.conteiner, .conteinerMenor {
+.conteiner,
+.conteinerMenor {
     display: flex;
     flex-direction: row;
     width: auto;
     height: auto;
     align-items: flex-start;
     position: relative;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s linear;
 }
 
 .conteinerMenor {
@@ -91,7 +86,7 @@ img {
     height: 150px;
     width: 120px;
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 
 
@@ -106,6 +101,7 @@ img {
     border-bottom-right-radius: 25px;
     border: 0px;
     z-index: 1;
+    cursor: pointer;
 }
 
 #left {
@@ -119,6 +115,7 @@ img {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     z-index: 1;
+    cursor: pointer;
 }
 
 .carrossel {

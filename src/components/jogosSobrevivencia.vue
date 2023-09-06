@@ -12,15 +12,10 @@
     </div>
 </template>
 
-
-
-
 <script>
 import { Carrosel2 } from '../../Images/TodosJogos';
 
 export default {
-
-    // as funcoes estao innferindo ao carrosel de maiorAvaliacao.vue
     data() {
         return {
             objeto: Carrosel2,
@@ -28,16 +23,16 @@ export default {
             currentPosition: 0,
             slideWidth: 300,
             containerWidth: 0,
-        }
+        };
     },
 
     mounted() {
-        const conteinerMenor = document.querySelector('.conteinerMenor');
+        const conteinerMenor = this.$refs.conteiner; // Use a ref aqui
         this.containerWidth = conteinerMenor.offsetWidth;
     },
+
     methods: {
         moveToRight() {
-
             if (this.currentPosition > -1200) {
                 this.currentPosition -= this.slideWidth;
                 this.updateCarrosselPosition();
@@ -46,23 +41,21 @@ export default {
             }
         },
         moveToLeft() {
-            console.log('clicou left')
+            console.log('clicou left');
             if (this.currentPosition < 0) {
                 this.currentPosition += this.slideWidth;
                 this.updateCarrosselPosition();
             }
         },
         updateCarrosselPosition() {
-            console.log('entrou nessa poha')
-            const carrossel = document.querySelector('.conteinerMenor');
+            console.log('entrou nessa poha');
+            const carrossel = this.$refs.conteinerMenor; // Use a ref aqui
 
             carrossel.style.transform = `translateX(${this.currentPosition}px)`;
             console.log(this.currentPosition);
-        }
-    }
-}
-
-
+        },
+    },
+};
 </script>
 
 <style scoped>
@@ -89,7 +82,7 @@ img {
     height: 150px;
     width: 120px;
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 
 #right {

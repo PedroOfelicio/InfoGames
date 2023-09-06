@@ -20,19 +20,18 @@ export default {
     computed: {
         slideStyle() {
             return {
-               // transform: `translateX(-${this.currentIndex * 100}%)`
+               transform: `translateX(-${this.currentIndex * 100}%)`
             };
         }
     },
     mounted() {
-        this.sliderInterval = setInterval(this.nextSlide, 10000);
+        this.sliderInterval = setInterval(this.nextSlide, 6000);
     },
     beforeDestroy() {
         clearInterval(this.sliderInterval);
     },
     methods: {
         nextSlide() {
-            console.log(this.objeto.length);
             this.currentIndex = (this.currentIndex + 1) % Object.keys(this.$data).length;
         }
     },
@@ -45,17 +44,18 @@ export default {
     display: flex;
     overflow: hidden;
     margin: 40px 0px;
+    width: 1200px;
+    border-radius: 20px;
 }
 
 .slide {
     display: flex;
-    transition: transform 5s ease-in-out;
-    width: auto;
+    transition: transform 2s linear;
+    width: 100%;
 }
 
 .slide img {
-    width: 800px;
-    height: auto;
-    border-radius: 20px;
+    width: 1200px;
+    height: 300px;
 }
 </style>

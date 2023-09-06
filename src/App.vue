@@ -4,7 +4,7 @@
     <navBar></navBar>
     <barraPesquisa></barraPesquisa>
     <slidePrincipal></slidePrincipal>
-    <h1>InfoGames, o seu portal para o mundo dos JOGOS</h1>
+    <h1 id="titulo">InfoGames, o seu portal para o mundo dos JOGOS</h1>
     <maiorAvaliacao></maiorAvaliacao>
     <jogosSobrevivencia></jogosSobrevivencia>
     <jogosPuzzle></jogosPuzzle>

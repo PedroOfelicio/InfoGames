@@ -47,7 +47,7 @@ img {
     height: 150px;
     width: 120px;
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 
 .carrosel {

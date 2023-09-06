@@ -12,8 +12,8 @@
             <hr>
             <div class="item">
                 <div class="carrosel" v-for="jogo in objeto2" :key="jogo.nome">
-                    <img :src="caminho + jogo.Capa + '.png'" alt="jogos de promoção">
                     <h3>{{ jogo.nome }}</h3>
+                    <img :src="caminho + jogo.Capa + '.png'" alt="jogos de promoção">
                 </div>
             </div>
 
@@ -78,9 +78,13 @@ h2 {
 }
 
 h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin: 15px;
     height: auto;
+    width: 100px;
 }
 
 hr {

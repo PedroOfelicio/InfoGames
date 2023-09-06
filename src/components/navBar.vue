@@ -48,8 +48,13 @@ a {
 
 .login {
     background: transparent;
-    border: 1px solid white;
+}
 
+.login, .signin{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login:hover {
@@ -58,7 +63,6 @@ a {
 
 .signin {
     background-color: rgb(0, 0, 255);
-    border: 1px solid;
 }
 
 .signin:hover {

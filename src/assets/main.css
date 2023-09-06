@@ -13,32 +13,33 @@ main {
 }
 
 
-body, html {
+body,
+html {
   margin: 0px;
   padding: 0px;
 }
 
-h1 {
+#titulo {
   display: flex;
   justify-content: center;
   font-size: 1.5rem;
   margin: 50px 0px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(34, 104, 255), rgba(0, 0, 0, 0));
 }
 
 a {
-text-decoration: none;
-color: white;
+  text-decoration: none;
+  color: white;
 }
 
-a:hover{
-color: rgb(0, 255, 242);
+a:hover {
+  color: rgb(0, 255, 242);
 }
 
 footer {
-display: flex;
-justify-content: space-around;
-background-color: rgb(79, 0, 170);
-padding: 10px 0px;
-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(79, 0, 170);
+  padding: 10px 0px;
+  width: 100%;
 }
-

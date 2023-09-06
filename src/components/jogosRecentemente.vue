@@ -4,6 +4,7 @@
         <div class="conteiner">
             <div class="carrosel" v-for="jogo in objeto" :key="jogo.nome">
                 <img :src="caminho + '/' + jogo.Capa + '.png'" alt="jogos recomendados">
+                <p>{{ jogo.nome }}</p>
             </div>
         </div>
     </div>
@@ -42,21 +43,40 @@ export default {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 800px;
+    width: 1000px;
 }
 
 .carrosel {
     display: flex;
-
+    position: relative;
+    text-align: center;
 }
 
 img {
-    width: 200px;
-    height: 250px;
+    width: 150px;
+    height: 200px;
     object-fit: cover;
     margin: 0px;
     padding: 0px;
     margin: 15px;
-    border-radius: 25px;
+    border-radius: 20px;
+    transition: filter 0.4s;
+}
+
+p {
+    display: none;
+}
+
+.carrosel:hover p {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.carrosel:hover img {
+    filter: brightness(20%);
 }
 </style>
