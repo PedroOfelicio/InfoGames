@@ -2,9 +2,9 @@
     <div class="conteinerMaior">
         <h2>Jogos com maior avaliação</h2>
         <div class="conteiner">
-            <button id="left" @click="moveToLeft">left</button>
-            <button id="right" @click="moveToRight">right</button>
-            <div class="conteinerMenor" ref="conteinerMenor"> <!-- Adicione a ref aqui -->
+            <button id="left" @click="moveToLeft"></button>
+            <button id="right" @click="moveToRight">            </button>
+            <div class="conteinerMenor" ref="conteinerMenor"> 
                 <div class="carrossel" v-for="jogo in objeto" :key="jogo.nome">
                     <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos" />
                     <h3>{{ jogo.nome }}</h3>
@@ -28,7 +28,7 @@ export default {
         };
     },
     mounted() {
-        // Use a ref para acessar o elemento DOM
+        
         const conteinerMenor = this.$refs.conteinerMenor;
         this.containerWidth = conteinerMenor.offsetWidth;
     },
@@ -47,7 +47,7 @@ export default {
             }
         },
         updateCarrosselPosition() {
-            // Use a ref para acessar o elemento DOM
+            
             const carrossel = this.$refs.conteinerMenor;
 
             carrossel.style.transform = `translateX(${this.currentPosition}px)`;
@@ -94,11 +94,11 @@ img {
     width: 25px;
     position: absolute;
     right: 0;
-    top: 0;
-    bottom: 0;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5));
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+    height: 220px;
+    top: 10px;
+    background: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     border: 0px;
     z-index: 1;
     cursor: pointer;
@@ -108,12 +108,12 @@ img {
     width: 25px;
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    top: 10px;
+    height: 220px;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0));
     border: none;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     z-index: 1;
     cursor: pointer;
 }
@@ -128,6 +128,8 @@ h3 {
     font-size: 15px;
     text-align: center;
     height: auto;
+    height: 45px;
+    overflow: hidden;
 }
 
 h2 {

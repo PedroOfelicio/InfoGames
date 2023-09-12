@@ -2,11 +2,13 @@
     <div class="conteinerMaior">
         <h2>Jogos de Sobrevivência</h2>
         <div class="conteiner">
-            <button id="left" @click="moveToLeft">left</button>
-            <button id="right" @click="moveToRight">right</button>
-            <div class="carrossel" v-for="jogo in objeto" :key="jogo.nome">
-                <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos">
-                <h3>{{ jogo.nome }}</h3>
+            <button id="left" @click="moveToLeft"></button>
+            <button id="right" @click="moveToRight"></button>
+            <div class="conteinerMenor" ref="conteinerMenor">
+                <div class="carrossel" v-for="jogo in objeto" :key="jogo.nome">
+                    <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos">
+                    <h3>{{ jogo.nome }}</h3>
+                </div>
             </div>
         </div>
     </div>
@@ -27,7 +29,7 @@ export default {
     },
 
     mounted() {
-        const conteinerMenor = this.$refs.conteiner; // Use a ref aqui
+        const conteinerMenor = this.$refs.conteinerMenor; // Use a ref aqui
         this.containerWidth = conteinerMenor.offsetWidth;
     },
 
@@ -36,29 +38,28 @@ export default {
             if (this.currentPosition > -1200) {
                 this.currentPosition -= this.slideWidth;
                 this.updateCarrosselPosition();
-                console.log('currentW', this.containerWidth);
-                console.log('position', this.currentPosition);
             }
         },
         moveToLeft() {
-            console.log('clicou left');
             if (this.currentPosition < 0) {
                 this.currentPosition += this.slideWidth;
                 this.updateCarrosselPosition();
             }
         },
         updateCarrosselPosition() {
-            console.log('entrou nessa poha');
             const carrossel = this.$refs.conteinerMenor; // Use a ref aqui
-
             carrossel.style.transform = `translateX(${this.currentPosition}px)`;
-            console.log(this.currentPosition);
+            console.log("depurou");
         },
     },
 };
 </script>
 
 <style scoped>
+.conteinerMaior {
+    margin: 60px 0px;
+}
+
 .conteiner {
     overflow: hidden;
 }
@@ -89,26 +90,28 @@ img {
     width: 25px;
     position: absolute;
     right: 0;
-    top: 0;
-    bottom: 0;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5));
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+    top: 10px;
+    height: 220px;
+    background: linear-gradient(to left, rgb(0, 0, 0), rgb(0, 0, 0, 0));
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     border: 0px;
     z-index: 1;
+    cursor: pointer;
 }
 
 #left {
     width: 25px;
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    top: 10px;
+    height: 220px;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0));
     border: none;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     z-index: 1;
+    cursor: pointer;
 }
 
 .carrossel {
@@ -121,6 +124,8 @@ img {
 h3 {
     text-align: center;
     font-size: 15px;
+    height: 45px;
+    overflow: hidden;
 }
 
 h2 {

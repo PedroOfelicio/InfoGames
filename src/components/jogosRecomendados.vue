@@ -12,7 +12,7 @@
 
 
 <script>
-import { JogosRecomendados } from '../../Images/todosJogos';
+import { JogosRecomendados } from '../../Images/TodosJogos';
 
 export default {
     data() {

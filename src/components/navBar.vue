@@ -1,71 +1,37 @@
 <template>
     <header>
         <h1 id="Logo">InfoGames</h1>
-        <div class="ladoDireito">
-            <img src="../../Images/Icones/IconeSuporte.png" alt="suporte">
-            <!-- erro na img  <img src="../../Images/Icones/IconeGlobal.png" alt="global"> -->
-            <a href="#" class="login">login</a>
-            <a href="#" class="signin">sign in</a>
+        <div class="conteiner">
+            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/SearchGame">Todos os Jogos</RouterLink>
         </div>
     </header>
 </template>
 
 <script>
-export default {
 
+export default {
+    
 }
 </script>
 
 <style scoped>
 header {
     display: flex;
-    width: 100%;
+    width: 97%;
     height: 40px;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     color: white;
+    background: linear-gradient(to bottom, rgb(54, 65, 219), rgb(19, 15, 129), rgb(5, 4, 32));
 }
 
-img {
-    width: 30px;
-    object-fit: cover;
-}
 
-.ladoDireito {
+.conteiner {
     display: flex;
     justify-content: space-around;
-    width: 300px;
+    width: 50%;
 }
 
-a {
-    border-radius: 10px;
-    border: 0px solid;
-    width: 100px;
-    color: white;
-    text-align: center;
-}
-
-.login {
-    background: transparent;
-}
-
-.login, .signin{
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.login:hover {
-    background-color: rgb(82, 0, 204);
-}
-
-.signin {
-    background-color: rgb(0, 0, 255);
-}
-
-.signin:hover {
-    background-color: rgb(82, 0, 204);
-}
 </style>

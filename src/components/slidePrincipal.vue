@@ -1,7 +1,7 @@
 <template>
     <div class="slider">
         <div class="slide" :style="slideStyle" v-for="(jogo, index) in objeto" :key="index">
-            <img :src="caminho + jogo.Capa + '.png'" :alt="jogo.Capa" >
+            <img :src="caminho + jogo.Capa + '.png'" :alt="jogo.Capa">
         </div>
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     computed: {
         slideStyle() {
             return {
-               transform: `translateX(-${this.currentIndex * 100}%)`
+                transform: `translateX(-${this.currentIndex * 100}%)`
             };
         }
     },
@@ -35,7 +35,7 @@ export default {
             this.currentIndex = (this.currentIndex + 1) % Object.keys(this.$data).length;
         }
     },
-    
+
 };
 </script>
   
@@ -43,7 +43,6 @@ export default {
 .slider {
     display: flex;
     overflow: hidden;
-    margin: 40px 0px;
     width: 1200px;
     border-radius: 20px;
 }

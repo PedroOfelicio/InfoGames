@@ -35,8 +35,7 @@
     to bottom right,
     rgba(255, 255, 255, 0),
     rgba(156, 156, 156, 0.116),
-    rgba(255, 255, 255, 0)
-  );
+    rgba(255, 255, 255, 0));
     border-radius: 15px;
     height: auto;
 }

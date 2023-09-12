@@ -12,7 +12,7 @@
 
 
 <script>
-import { UltimaParte } from '../../Images/todosJogos';
+import { UltimaParte } from '../../Images/TodosJogos';
 
 export default {
     data() {
