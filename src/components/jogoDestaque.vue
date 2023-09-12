@@ -4,7 +4,7 @@
         <div class="conteiner">
 
             <div class="item1">
-                <img src="../../Images/Jogos com Maior Avaliação/Carrosel1_Valheim.png" alt="Valheim">
+                <img src="../../Images/Jogos com Maior Avaliação/Carrosel1_Valheim.jpeg" alt="Valheim">
             </div>
             <div class="item2">
                 <h3>Valheim</h3>

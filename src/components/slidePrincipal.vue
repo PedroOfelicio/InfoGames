@@ -43,7 +43,7 @@ export default {
 .slider {
     display: flex;
     overflow: hidden;
-    width: 1200px;
+    width: 100%;
     border-radius: 20px;
 }
 
@@ -56,5 +56,6 @@ export default {
 .slide img {
     width: 1200px;
     height: 300px;
+    object-fit: fill;
 }
 </style>

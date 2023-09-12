@@ -12,36 +12,26 @@
   </div>
   <div class="conteiner2">
     <div class="carrossel" v-for="jogo in objeto" :key="jogo.nome">
-      <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos" />
+      <img :src="caminho + jogo.pasta + '/' + jogo.Capa + '.png'" alt="imagens jogos" />
       <h3>{{ jogo.nome }}</h3>
     </div>
   </div>
 </template>
 
 <script>
-import { todosOsJogosArray } from '../assets/nomesJogos';
-import { Carrosel3 } from '../../Images/TodosJogos';
+import { ObjetoUnico } from '../assets/ObjetoUnico';
 
 export default {
   data() {
     return {
-      caminho: "../../Images/Jogos de Puzzle/",
-      objeto: Carrosel3,
+      caminho: "../../Images/",
+      objeto: ObjetoUnico,
       termoDePesquisa: "",
-      jogosFiltrados: todosOsJogosArray,
       resultadosDaPesquisa: [],
     };
   },
   methods: {
-    realizarPesquisa() {
-      const letraDePesquisa = this.termoDePesquisa.toLowerCase();
-      this.resultadosDaPesquisa = [];
 
-      this.resultadosDaPesquisa = this.jogosFiltrados.filter((jogo) => {
-        const nomeDoJogo = jogo.nome.toLowerCase();
-        return nomeDoJogo.includes(letraDePesquisa);
-      });
-    }
   }
 };
 </script>

@@ -79,5 +79,7 @@ p {
 
 .carrosel:hover img{
     filter: brightness(20%);
+    border: 3px solid rgb(255, 255, 255);
+    transform: scale(1.2);
 }
 </style>

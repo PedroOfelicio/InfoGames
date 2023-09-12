@@ -96,7 +96,7 @@ img {
     right: 0;
     top: 10px;
     height: 220px;
-    background: linear-gradient(to left, rgb(0, 0, 0), rgb(0, 0, 0, 0));
+    background: linear-gradient(to left, rgb(0, 81, 255), rgb(0, 0, 0, 0));
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 0px;
@@ -110,7 +110,7 @@ img {
     position: absolute;
     left: 0;
     top: 10px;
-    background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgb(0, 81, 255), rgba(0, 0, 0, 0));
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -136,5 +136,3 @@ h2 {
     padding: 0px 15px;
 }
 </style>
-
-

@@ -1,11 +1,7 @@
 <template>
-    <barraPesquisa></barraPesquisa>
-    <!-- <div class="conteiner">
-        <div class="carrossel" v-for="jogo in objeto" :key="jogo.nome">
-            <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos" />
-            <h3>{{ jogo.nome }}</h3>
-        </div>
-    </div> -->
+    <div class="conteiner">
+        <barraPesquisa></barraPesquisa>
+    </div>
 </template>
 
 <script>
@@ -29,7 +25,6 @@ export default {
 </script>
 
 <style scoped>
-
 * {
     margin: 0;
     padding: 0;
@@ -39,24 +34,7 @@ export default {
 .conteiner {
     display: flex;
     justify-content: center;
-    align-items: start;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
 }
-
-.carrossel {
-    margin: 10px;
-}
-
-img {
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-h3 {
-    text-align: center;
-    font-size: 16px;
-}
-
 </style>
