@@ -3,9 +3,9 @@ export const ObjetoUnico = {
 
     jogo1: {
         id: 1,
-        nome: 'BlackDesert',
+        nome: 'God of War',
         Background: 'BlackDesert',
-        Capa: 'CarroselPrincipal_BlackDesert',
+        Capa: 'god of war',
         pasta: 'Slide Principal'
     },
 
@@ -13,7 +13,7 @@ export const ObjetoUnico = {
         id: 2,
         nome: 'Fortnite',
         Background: 'Fortnite',
-        Capa: 'CarroselPrincipal_Fortnite',
+        Capa: 'fornite',
         pasta: 'Slide Principal'
     },
 
@@ -21,7 +21,7 @@ export const ObjetoUnico = {
         id: 3,
         nome: 'League of Legends',
         Background: 'LeagueOfLegends',
-        Capa: 'CarroselPrincipal_LOL',
+        Capa: 'league of legends',
         pasta: 'Slide Principal'
     },
 

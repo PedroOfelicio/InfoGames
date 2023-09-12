@@ -1,7 +1,9 @@
 <template>
-    <div class="slider">
-        <div class="slide" :style="slideStyle" v-for="(jogo, index) in objeto" :key="index">
-            <img :src="caminho + jogo.Capa + '.png'" :alt="jogo.Capa">
+    <div class="conteiner">
+        <div class="slider">
+            <div class="slide" :style="slideStyle" v-for="(jogo, index) in objeto" :ref="index">
+                <img :src="caminho + jogo.Capa + '.png'" :alt="jogo.Capa">
+            </div>
         </div>
     </div>
 </template>
@@ -32,7 +34,7 @@ export default {
     },
     methods: {
         nextSlide() {
-            this.currentIndex = (this.currentIndex + 1) % Object.keys(this.$data).length;
+            this.currentIndex = (this.currentIndex + 1) % Object.keys(this.$refs).length;
         }
     },
 
@@ -40,17 +42,23 @@ export default {
 </script>
   
 <style scoped>
+
+.conteiner {
+    display: flex;
+    justify-content: center;
+}
+
 .slider {
     display: flex;
     overflow: hidden;
-    width: 100%;
+    width: 1200px;
     border-radius: 20px;
 }
 
 .slide {
     display: flex;
     transition: transform 2s linear;
-    width: 100%;
+    width: 1200px;
 }
 
 .slide img {

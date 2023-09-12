@@ -49,7 +49,7 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 20px;
+  margin: 40px;
   transition: transform 0.3s;
   position: relative;
   width: 400px;
