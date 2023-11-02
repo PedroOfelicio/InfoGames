@@ -19,19 +19,20 @@ export default {
 header {
     display: flex;
     width: 97%;
-    height: 40px;
+    height: 25px;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     color: white;
-    background: linear-gradient(to bottom, rgb(5, 4, 32), rgb(8, 0, 255), rgb(5, 4, 32));
+    background: blue;
 }
 
 
 .conteiner {
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 300px;
+    margin: 0px 30px;
 }
 
 </style>
