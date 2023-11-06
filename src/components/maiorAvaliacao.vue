@@ -5,9 +5,11 @@
       <button id="left" @click="moveToLeft"></button>
       <button id="right" @click="moveToRight"></button>
       <div class="conteinerMenor" ref="conteinerMenor">
-        <div class="carrossel" v-for="(jogo, index) in objeto" :ref="index">
-          <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos" />
-          <h3>{{ jogo.nome }}</h3>
+        <div class="carrossel" v-for="(jogo, index) in objeto"  :key="index" :ref="index">
+          <router-link :to="{ name: 'jogo', params: { id: jogo.id.toString() } }">
+            <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos" />
+            <h3>{{ jogo.nome }}</h3>
+          </router-link>
         </div>
       </div>
     </div>
@@ -49,7 +51,7 @@ export default {
       }
     },
     updateCarrosselPosition() {
-      const carrossel = this.$refs.conteinerMenor; 
+      const carrossel = this.$refs.conteinerMenor;
       carrossel.style.transform = `translateX(${this.currentPosition}px)`;
       console.log("depurou");
     },
@@ -60,7 +62,7 @@ export default {
 
 <style scoped>
 .conteinerMaior {
-  margin: 60px 0px;
+  margin: 60px 60px;
 }
 
 .conteiner {

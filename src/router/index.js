@@ -9,16 +9,17 @@ const router = createRouter({
       component: () => import('../views/Home.vue')
     },
     {
-      path: '/jogo',
-      name: 'Page Jogo',
-      component: () => import('../views/JogoIndividual.vue')
-    },
-    {
       path: '/SearchGame',
       name: 'SearchGame',
       component: () => import('../views/pesquisaJogo.vue')
+    },
+    {
+      path: '/game/:id',
+      name: 'jogo',
+      component: () => import('../views/JogoIndividual.vue'),
+      props: true
     }
-    
+
   ]
 })
 

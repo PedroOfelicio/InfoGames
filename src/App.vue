@@ -1,10 +1,10 @@
 
 <template>
-  <navBar></navBar>
+  <navBar  v-if="$route.name !== 'jogo'" />
   <main>
     <RouterView></RouterView>
   </main>
-  <footer>
+  <footer  v-if="$route.name !== 'jogo'">
     <a href="#">Envie uma mensagem ao suporte</a>
     <a href="#">Políticas de Privacidade</a>
     <a href="#">Comunidade</a>

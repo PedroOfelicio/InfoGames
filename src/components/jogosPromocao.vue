@@ -5,15 +5,19 @@
 
             <div class="item">
                 <div class="carrosel" v-for="jogo in objeto" :key="jogo.nome">
-                    <img :src="caminho + jogo.Capa + '.png'" alt="jogos de promoção">
-                    <h3>{{ jogo.nome }}</h3>
+                    <router-link class="carrosel" :to="{ name: 'jogo', params: { id: jogo.id.toString() } }">
+                        <img :src="caminho + jogo.Capa + '.png'" alt="jogos de promoção">
+                        <h3>{{ jogo.nome }}</h3>
+                    </router-link>
                 </div>
             </div>
             <hr>
             <div class="item">
                 <div class="carrosel" v-for="jogo in objeto2" :key="jogo.nome">
-                    <h3>{{ jogo.nome }}</h3>
-                    <img :src="caminho + jogo.Capa + '.png'" alt="jogos de promoção">
+                    <router-link class="carrosel" :to="{ name: 'jogo', params: { id: jogo.id.toString() } }">
+                        <h3>{{ jogo.nome }}</h3>
+                        <img :src="caminho + jogo.Capa + '.png'" alt="jogos de promoção">
+                    </router-link>
                 </div>
             </div>
 
@@ -39,9 +43,8 @@ export default {
 
 
 <style scoped>
-
 .conteinerMaior {
-    padding: 60px 0px;
+    padding: 60px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;

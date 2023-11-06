@@ -42,17 +42,18 @@ export default {
 </script>
   
 <style scoped>
-
 .conteiner {
     display: flex;
     justify-content: center;
     margin: 30px 20px;
+    height: 300px;
 }
 
 .slider {
     display: flex;
     overflow: hidden;
     width: 1200px;
+    height: 300px;
     border-radius: 20px;
 }
 
@@ -60,6 +61,7 @@ export default {
     display: flex;
     transition: transform 2s linear;
     width: 1200px;
+    height: 300px;
 }
 
 .slide img {

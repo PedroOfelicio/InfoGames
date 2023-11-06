@@ -6,8 +6,10 @@
             <button id="right" @click="moveToRight"></button>
             <div class="conteinerMenor" ref="conteinerMenor">
                 <div class="carrossel" v-for="jogo in objeto" :key="jogo.nome">
-                    <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos">
-                    <h3>{{ jogo.nome }}</h3>
+                    <router-link :to="{ name: 'jogo', params: { id: jogo.id.toString() } }">
+                        <img :src="caminho + jogo.Capa + '.png'" alt="imagens jogos">
+                        <h3>{{ jogo.nome }}</h3>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -57,7 +59,7 @@ export default {
 
 <style scoped>
 .conteinerMaior {
-    margin: 60px 0px;
+    margin: 60px 60px;
 }
 
 .conteiner {

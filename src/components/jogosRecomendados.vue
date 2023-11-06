@@ -3,8 +3,10 @@
         <h2>Jogos Recomendados</h2>
         <div class="conteiner">
             <div class="carrosel" v-for="jogo in objeto" :key="jogo.nome">
-                <img :src="caminho + jogo.Capa + '.png'" alt="jogos recomendados">
-                <p>{{ jogo.nome }}</p>
+                <router-link :to="{ name: 'jogo', params: { id: jogo.id.toString() } }">
+                    <img :src="caminho + jogo.Capa + '.png'" alt="jogos recomendados">
+                    <p>{{ jogo.nome }}</p>
+                </router-link>
             </div>
         </div>
     </div>
@@ -77,7 +79,7 @@ p {
     padding: 10px;
 }
 
-.carrosel:hover img{
+.carrosel:hover img {
     filter: brightness(20%);
     border: 3px solid rgb(255, 255, 255);
     transform: scale(1.2);

@@ -2,7 +2,6 @@
     <div class="conteinerMaior">
         <h2>Jogo em Destaque</h2>
         <div class="conteiner">
-
             <div class="item1">
                 <img src="../../Images/Jogos com Maior Avaliação/Carrosel1_Valheim.png" alt="Valheim">
             </div>
@@ -23,19 +22,17 @@
 
 
 <style scoped>
-
 .conteinerMaior {
-    margin: 70px 0px;
+    margin: 70px 60px;
 }
 
 .conteiner {
     display: flex;
     flex-direction: row;
-    background: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0),
-    rgba(156, 156, 156, 0.116),
-    rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0),
+            rgba(156, 156, 156, 0.116),
+            rgba(255, 255, 255, 0));
     border-radius: 15px;
     height: auto;
 }
@@ -45,7 +42,7 @@
     height: auto;
 }
 
-.item1 > img {
+.item1>img {
     width: 100%;
     object-fit: cover;
     border-radius: 15px;
